@@ -10,5 +10,15 @@ get '/' => sub {
   $c->render(text => 'Package Monitor');
 };
 
+websocket '/echo' => sub {
+  my $c = shift;
+
+  $c->on(message => sub {
+      my ($self, $msg) = @_;
+
+      $self->send('echo: ' . $msg);
+  });
+};
+
 app->start;
 
