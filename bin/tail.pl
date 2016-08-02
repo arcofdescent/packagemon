@@ -7,7 +7,29 @@ use 5.010;
 #   daemon to tail a file
 
 use File::Tail;
+use AnyEvent::WebSocket::Client;
 
 my $log = '/var/log/dpkg.log';
 
+my $client = AnyEvent::WebSocket::Client->new();
+
+$client->connect("ws://localhost:3000/echo")->cb(sub {
+
+    our $connection = eval { shift->recv };
+    if ($@) {
+      warn $@;
+      return;
+    }
+
+    $connection->send("Hello");
+
+    $connection->on(each_message => sub {
+        my ($connection, $msg) = @_;
+        say "received from browser: $msg";
+      
+      });
+    $connection->close();
+  
+
+});
 

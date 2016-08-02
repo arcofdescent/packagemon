@@ -7,7 +7,7 @@ use Mojolicious::Lite;
 get '/' => sub {
   my $c = shift;
 
-  $c->render(text => 'Package Monitor');
+  $c->render('index');
 };
 
 websocket '/echo' => sub {
@@ -16,7 +16,7 @@ websocket '/echo' => sub {
   $c->on(message => sub {
       my ($self, $msg) = @_;
 
-      $self->send('echo: ' . $msg);
+      $self->tx->send('echo: ' . $msg);
   });
 };
 
