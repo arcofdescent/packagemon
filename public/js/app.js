@@ -3,14 +3,14 @@ $(document).ready(function() {
 
   console.log('ready');
 
+  // start a websocket server
   var ws = new WebSocket('ws://localhost:3000/echo');
   ws.onopen = function () {
     console.log('Connection opened');
-    //ws.send('Please monitor my packages');
   };
 
-  ws.onmessage = function (msg) {
-    console.log('msg received: ' + msg);
+  ws.onmessage = function(msg) {
+    console.log(msg.data);
   };
 
   /*

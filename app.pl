@@ -21,11 +21,11 @@ websocket '/echo' => sub {
 
   $c->on(message => sub {
       my ($self, $msg) = @_;
-      #$c->app->log->debug("Received message: $msg");
+      $c->app->log->debug("Received message: $msg");
 
       # send to all clients, which includes the ws in our app.js
       for (keys %clients) {
-        $clients{$_}->send('echo :' . $msg);
+        $clients{$_}->send($msg);
       }
   });
 
