@@ -4,6 +4,8 @@ use 5.010;
 
 use Mojolicious::Lite;
 
+my %clients;
+
 get '/' => sub {
   my $c = shift;
 
@@ -13,12 +15,26 @@ get '/' => sub {
 websocket '/echo' => sub {
   my $c = shift;
 
+  $c->app->log->debug('Client connected: ' . $c->tx);
+  my $id = sprintf "%s", $c->tx;
+  $clients{$id} = $c->tx;
+
   $c->on(message => sub {
       my ($self, $msg) = @_;
-      $c->app->log->debug("Received message: $msg");
+      #$c->app->log->debug("Received message: $msg");
 
-      $self->send('echo: ' . $msg);
+      # send to all clients, which includes the ws in our app.js
+      for (keys %clients) {
+        $clients{$_}->send('ecgo :' . $msg);
+      }
   });
+
+  $c->on(finish => sub {
+      $c->app->log->debug('Client disconnected');
+      delete $clients{$id};
+    
+  });
+
 };
 
 app->start;

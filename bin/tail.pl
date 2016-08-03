@@ -34,7 +34,8 @@ $client->connect("ws://localhost:3000/echo")->cb(sub {
     #
     #});
     #$connection->close();
-  
 
 });
+
+AnyEvent->condvar->recv;
 

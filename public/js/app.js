@@ -6,10 +6,11 @@ $(document).ready(function() {
   var ws = new WebSocket('ws://localhost:3000/echo');
   ws.onopen = function () {
     console.log('Connection opened');
+    //ws.send('Please monitor my packages');
   };
 
   ws.onmessage = function (msg) {
-    console.log('msg received' + msg);
+    console.log('msg received: ' + msg);
   };
 
   /*
