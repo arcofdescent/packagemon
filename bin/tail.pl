@@ -41,10 +41,10 @@ sub tail_the_log {
         my $msg;
 
         if ($info->{status} eq 'installed') {
-          $msg = 'Installed ' . $info->{package};
+          $msg = $info->{date_time} . ' - Installed ' . $info->{package};
         }
         elsif ($info->{status} eq 'remove') {
-          $msg = 'Removed ' . $info->{package};
+          $msg = $info->{date_time} . ' - Removed ' . $info->{package};
         }
 
         $connection->send($msg);
@@ -73,7 +73,8 @@ sub parse_log_line {
       delete $installed_packages{$package};
       return {
         status => $status_2,
-        package => $package,# TODO send more info like data and time
+        package => $package,
+        date_time => join(' ', $date, $time),
       };
     }
   }
@@ -81,7 +82,8 @@ sub parse_log_line {
   if ($status eq 'remove') {
     return {
       status => $status,
-      package => $status_2,# TODO send more info like data and time
+      package => $status_2,
+      date_time => join(' ', $date, $time),
     };
   }
 

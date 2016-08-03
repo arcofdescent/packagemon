@@ -11,6 +11,17 @@ $(document).ready(function() {
 
   ws.onmessage = function(msg) {
     console.log(msg.data);
+
+    // probably not safe to use a regex, we should be receiving JSON
+    var li_class;
+    if (msg.data.match(/Installed/)) {
+      li_class = 'installed';
+    }
+    else if (msg.data.match(/Removed/)) {
+      li_class = 'removed';
+    }
+
+    $("#package_list").append('<li class="' + li_class + '">' + msg.data + '</li>'); 
   };
 
   /*

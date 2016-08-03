@@ -8,12 +8,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <style>
+
+      .installed {
+        padding: 10px;
+        background-color: lightgreen;
+        color: black;
+        margin: 5px;
+      }
+
+      .removed {
+        padding: 10px;
+        background-color: pink;
+        color: black;
+        margin: 5px;
+      }
+
+    </style>
+
   </head>
 
   <body>
 
-    Halo!
-    <button id="send">Send</button>
+    <div class="container">
+      <div class="row">
+        <h3>Package Monitor</h3>
+        <div class="col-md-6">
+          <ul id="package_list">
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
