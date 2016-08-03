@@ -25,7 +25,7 @@ websocket '/echo' => sub {
 
       # send to all clients, which includes the ws in our app.js
       for (keys %clients) {
-        $clients{$_}->send('ecgo :' . $msg);
+        $clients{$_}->send('echo :' . $msg);
       }
   });
 

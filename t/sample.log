@@ -1,0 +1,67 @@
+2016-08-03 17:12:30 startup archives unpack
+2016-08-03 17:12:30 install cmake-data:all <none> 3.5.1-1ubuntu2
+2016-08-03 17:12:30 status half-installed cmake-data:all 3.5.1-1ubuntu2
+2016-08-03 17:12:30 status triggers-pending man-db:amd64 2.7.5-1
+2016-08-03 17:12:32 status unpacked cmake-data:all 3.5.1-1ubuntu2
+2016-08-03 17:12:32 status unpacked cmake-data:all 3.5.1-1ubuntu2
+2016-08-03 17:12:32 install libjsoncpp1:amd64 <none> 1.7.2-1
+2016-08-03 17:12:32 status triggers-pending libc-bin:amd64 2.23-0ubuntu3
+2016-08-03 17:12:32 status half-installed libjsoncpp1:amd64 1.7.2-1
+2016-08-03 17:12:33 status unpacked libjsoncpp1:amd64 1.7.2-1
+2016-08-03 17:12:33 status unpacked libjsoncpp1:amd64 1.7.2-1
+2016-08-03 17:12:33 install cmake:amd64 <none> 3.5.1-1ubuntu2
+2016-08-03 17:12:33 status half-installed cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:12:34 status unpacked cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:12:34 status unpacked cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:12:34 trigproc man-db:amd64 2.7.5-1 <none>
+2016-08-03 17:12:34 status half-configured man-db:amd64 2.7.5-1
+2016-08-03 17:12:35 status installed man-db:amd64 2.7.5-1
+2016-08-03 17:12:35 trigproc libc-bin:amd64 2.23-0ubuntu3 <none>
+2016-08-03 17:12:35 status half-configured libc-bin:amd64 2.23-0ubuntu3
+2016-08-03 17:12:36 status installed libc-bin:amd64 2.23-0ubuntu3
+2016-08-03 17:12:36 startup packages configure
+2016-08-03 17:12:36 configure cmake-data:all 3.5.1-1ubuntu2 <none>
+2016-08-03 17:12:36 status unpacked cmake-data:all 3.5.1-1ubuntu2
+2016-08-03 17:12:36 status unpacked cmake-data:all 3.5.1-1ubuntu2
+2016-08-03 17:12:36 status half-configured cmake-data:all 3.5.1-1ubuntu2
+2016-08-03 17:12:36 status installed cmake-data:all 3.5.1-1ubuntu2
+2016-08-03 17:12:36 configure libjsoncpp1:amd64 1.7.2-1 <none>
+2016-08-03 17:12:36 status triggers-pending libc-bin:amd64 2.23-0ubuntu3
+2016-08-03 17:12:36 status unpacked libjsoncpp1:amd64 1.7.2-1
+2016-08-03 17:12:36 status half-configured libjsoncpp1:amd64 1.7.2-1
+2016-08-03 17:12:36 status installed libjsoncpp1:amd64 1.7.2-1
+2016-08-03 17:12:36 configure cmake:amd64 3.5.1-1ubuntu2 <none>
+2016-08-03 17:12:36 status unpacked cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:12:36 status half-configured cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:12:36 status installed cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:12:37 trigproc libc-bin:amd64 2.23-0ubuntu3 <none>
+2016-08-03 17:12:37 status half-configured libc-bin:amd64 2.23-0ubuntu3
+2016-08-03 17:12:37 status installed libc-bin:amd64 2.23-0ubuntu3
+2016-08-03 17:12:37 startup packages configure
+2016-08-03 17:14:38 startup packages remove
+2016-08-03 17:14:38 status installed cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:14:38 remove cmake:amd64 3.5.1-1ubuntu2 <none>
+2016-08-03 17:14:38 status half-configured cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:14:38 status half-installed cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:14:38 status triggers-pending man-db:amd64 2.7.5-1
+2016-08-03 17:14:38 status config-files cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:14:38 status config-files cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:14:38 trigproc man-db:amd64 2.7.5-1 <none>
+2016-08-03 17:14:38 status half-configured man-db:amd64 2.7.5-1
+2016-08-03 17:14:38 status installed man-db:amd64 2.7.5-1
+2016-08-03 17:14:39 startup packages configure
+2016-08-03 17:15:44 startup archives unpack
+2016-08-03 17:15:44 install cmake:amd64 3.5.1-1ubuntu2 3.5.1-1ubuntu2
+2016-08-03 17:15:44 status half-installed cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:15:44 status triggers-pending man-db:amd64 2.7.5-1
+2016-08-03 17:15:45 status unpacked cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:15:45 status unpacked cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:15:45 trigproc man-db:amd64 2.7.5-1 <none>
+2016-08-03 17:15:45 status half-configured man-db:amd64 2.7.5-1
+2016-08-03 17:15:45 status installed man-db:amd64 2.7.5-1
+2016-08-03 17:15:45 startup packages configure
+2016-08-03 17:15:45 configure cmake:amd64 3.5.1-1ubuntu2 <none>
+2016-08-03 17:15:45 status unpacked cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:15:46 status half-configured cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:15:46 status installed cmake:amd64 3.5.1-1ubuntu2
+2016-08-03 17:15:46 startup packages configure

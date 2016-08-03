@@ -1,32 +1,33 @@
 #!/usr/bin/perl
 use strict; use warnings;
 use 5.010;
+$|++;
 
 # tail.pl
 # -------
 #   daemon to tail a file
 
-use File::Tail;
+use Event::File;
 use AnyEvent::WebSocket::Client;
 
-my $log = '/var/log/dpkg.log';
-
+#my $log = '/var/log/dpkg.log';
 my $client = AnyEvent::WebSocket::Client->new();
+my $log = 't.log';
+
+my $connection;
+my @lines;
 
 $client->connect("ws://localhost:3000/echo")->cb(sub {
 
-    say "Connected";
-
-    our $connection = eval { shift->recv };
+    $connection = eval { shift->recv };
     if ($@) {
-      warn $@;
+      die $@;
       return;
     }
 
-    while (1) {
-      $connection->send("Hello");
-      sleep(2);
-    }
+    # start tailing
+    tail_the_log();
+
 
     #$connection->on(each_message => sub {
     #my ($connection, $msg) = @_;
@@ -37,5 +38,26 @@ $client->connect("ws://localhost:3000/echo")->cb(sub {
 
 });
 
-AnyEvent->condvar->recv;
+sub tail_the_log {
+  Event::File->tail(
+    file => $log,
+    cb => sub {
+      my ($e, $line) = @_;
+      $connection->send($line);
+      #push @lines, $line;
+    },
+    timeout => 5,
+  );
+}
+
+Event::loop;
+
+#AnyEvent->condvar->recv;
+
+sub parse_log_line {
+  my ($line) = @_;
+  my ($date, $time, $status, $status_2, $package) = split / /, $line;
+
+  return $line;
+}
 
