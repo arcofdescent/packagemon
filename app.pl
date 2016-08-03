@@ -15,8 +15,9 @@ websocket '/echo' => sub {
 
   $c->on(message => sub {
       my ($self, $msg) = @_;
+      $c->app->log->debug("Received message: $msg");
 
-      $self->tx->send('echo: ' . $msg);
+      $self->send('echo: ' . $msg);
   });
 };
 

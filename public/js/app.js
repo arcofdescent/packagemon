@@ -12,9 +12,11 @@ $(document).ready(function() {
     console.log('msg received' + msg);
   };
 
+  /*
   $("#send").click(function() {
     ws.send('Please monitor my packages');
   });
+  */
 
 });
 
