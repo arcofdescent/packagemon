@@ -9,9 +9,9 @@ use 5.010;
 use Event::File;
 use AnyEvent::WebSocket::Client;
 
-#my $log = '/var/log/dpkg.log';
+my $log = '/var/log/dpkg.log';
 my $client = AnyEvent::WebSocket::Client->new();
-my $log = './t/sample.log';
+#my $log = './t/sample.log';
 
 my $connection;
 
