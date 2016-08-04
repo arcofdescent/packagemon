@@ -2,16 +2,16 @@
 webapp to monitor packages
 
 ## DESCRIPTION
-This basically boils down to monitor a log file. In the case of deb based
-distros this would be ***/var/log/dpkg.log***.
+This basically boils down to monitoring a log file. In the case of deb based
+distros this would be ***/var/log/dpkg.log***
 
 We first set up a websocet server in app.pl, thanks to **Mojolicious**.
 ***public/js/app.js*** connects and listens for messages and then adds entries
 to the HTML. Simple enough.
 
-Now for the file monitor. In ***bin/tail.pl*** we set up a damone using the 
+Now for the file monitor. In ***bin/tail.pl*** we set up a daemon using the 
 Event module. At the same time **AnyEvent::WebSocket::Client** connects to the
-websocet server. So, Event::File tails the logs file, parses the line, and send
+websocket server. So, Event::File tails the log file, parses the line, and sends 
 the info via the websocket connection.
 
 ## INSTALLATION
