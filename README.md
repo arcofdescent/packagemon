@@ -5,7 +5,7 @@ webapp to monitor packages
 This basically boils down to monitoring a log file. In the case of deb based
 distros this would be ***/var/log/dpkg.log***
 
-We first set up a websocet server in app.pl, thanks to **Mojolicious**.
+We first set up a websocket server in ***app.pl***, thanks to **Mojolicious**.
 ***public/js/app.js*** connects and listens for messages and then adds entries
 to the HTML. Simple enough.
 
